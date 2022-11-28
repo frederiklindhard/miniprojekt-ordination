@@ -30,7 +30,7 @@ public class DagligSkæv : Ordination {
         }
 
 	
-        return Math.Round(samletDoser / antalDage);
+        return Math.Round(samletDoser);
 	}
 
 	public override String getType() {
