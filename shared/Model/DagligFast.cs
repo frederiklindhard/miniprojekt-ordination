@@ -22,7 +22,7 @@ public class DagligFast : Ordination {
 		
 		return base.antalDage() * doegnDosis();
 	}
-
+	//her har vi lavet noget
 	public override double doegnDosis() {
 		double samletDoegnDosisFast = MorgenDosis.antal + MiddagDosis.antal + AftenDosis.antal + NatDosis.antal;
         return samletDoegnDosisFast;
