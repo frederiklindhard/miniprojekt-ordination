@@ -9,8 +9,7 @@ public class Laegemiddel
     public double enhedPrKgPrDoegnTung { get; set; }   // faktor der anvendes hvis patient vægt > 120 kg 
     public String enhed { get; set; }
 
-    public Laegemiddel(String navn, double enhedPrKgPrDoegnLet, double enhedPrKgPrDoegnNormal,
-            double enhedPrKgPrDoegnTung, String enhed)
+    public Laegemiddel(String navn, double enhedPrKgPrDoegnLet, double enhedPrKgPrDoegnNormal, double enhedPrKgPrDoegnTung, String enhed)
     {
         this.navn = navn;
         this.enhedPrKgPrDoegnLet = enhedPrKgPrDoegnLet;
@@ -19,7 +18,8 @@ public class Laegemiddel
         this.enhed = enhed;
     }
 
-    public Laegemiddel() {
+    public Laegemiddel()
+    {
         this.navn = "";
         this.enhed = "";
     }

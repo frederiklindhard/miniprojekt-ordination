@@ -8,7 +8,8 @@ public class DagligFast : Ordination {
     public Dosis AftenDosis { get; set; } = new Dosis();
     public Dosis NatDosis { get; set; } = new Dosis();
 
-	public DagligFast(DateTime startDen, DateTime slutDen, Laegemiddel laegemiddel, double morgenAntal, double middagAntal, double aftenAntal, double natAntal) : base(laegemiddel, startDen, slutDen) {
+	public DagligFast(DateTime startDen, DateTime slutDen, Laegemiddel laegemiddel, double morgenAntal, double middagAntal, double aftenAntal, double natAntal) : base(laegemiddel, startDen, slutDen)
+	{
         MorgenDosis = new Dosis(CreateTimeOnly(6, 0, 0), morgenAntal);
         MiddagDosis = new Dosis(CreateTimeOnly(12, 0, 0), middagAntal);
         AftenDosis = new Dosis(CreateTimeOnly(18, 0, 0), aftenAntal);
@@ -18,22 +19,26 @@ public class DagligFast : Ordination {
     public DagligFast() : base(null!, new DateTime(), new DateTime()) {
     }
 
-	public override double samletDosis() {
-		
+	public override double samletDosis()
+	{
 		return base.antalDage() * doegnDosis();
 	}
-	//her har vi lavet noget
-	public override double doegnDosis() {
+
+    // TODO: Implement!
+    public override double doegnDosis()
+	{
 		double samletDoegnDosisFast = MorgenDosis.antal + MiddagDosis.antal + AftenDosis.antal + NatDosis.antal;
         return samletDoegnDosisFast;
 	}
 	
-	public Dosis[] getDoser() {
+	public Dosis[] getDoser()
+	{
 		Dosis[] doser = {MorgenDosis, MiddagDosis, AftenDosis, NatDosis};
 		return doser;
 	}
 
-	public override String getType() {
+	public override String getType()
+	{
 		return "DagligFast";
 	}
 }

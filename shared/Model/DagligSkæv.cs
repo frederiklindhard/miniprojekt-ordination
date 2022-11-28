@@ -6,34 +6,39 @@ public class DagligSkæv : Ordination {
     public DagligSkæv(DateTime startDen, DateTime slutDen, Laegemiddel laegemiddel) : base(laegemiddel, startDen, slutDen) {
 	}
 
-    public DagligSkæv(DateTime startDen, DateTime slutDen, Laegemiddel laegemiddel, Dosis[] doser) : base(laegemiddel, startDen, slutDen) {
+    public DagligSkæv(DateTime startDen, DateTime slutDen, Laegemiddel laegemiddel, Dosis[] doser) : base(laegemiddel, startDen, slutDen)
+    {
         this.doser = doser.ToList();
     }    
 
     public DagligSkæv() : base(null!, new DateTime(), new DateTime()) {
     }
 
-	public void opretDosis(DateTime tid, double antal) {
+	public void opretDosis(DateTime tid, double antal)
+    {
         doser.Add(new Dosis(tid, antal));
     }
 
-	public override double samletDosis() {
+	public override double samletDosis()
+    {
 		return base.antalDage() * doegnDosis();
 	}
 
-	public override double doegnDosis() {
-		double antalDage = base.antalDage();
-		double samletDoser = 0;
-		foreach (var dose in doser)
+    // TODO: Implement!
+    public override double doegnDosis()
+    {
+        double antalDage = base.antalDage();
+        double samletDoser = 0;
+
+        foreach (var dose in doser)
         {
-			samletDoser += dose.antal;
+            samletDoser += dose.antal;
         }
-
-	
         return Math.Round(samletDoser);
-	}
+    }
 
-	public override String getType() {
+	public override String getType()
+    {
 		return "DagligSkæv";
 	}
 }
