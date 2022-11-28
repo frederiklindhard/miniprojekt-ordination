@@ -138,6 +138,7 @@ public class DataService
     }
 
     // TODO: Implement!
+    // Opretter en PN ordination
     public PN OpretPN(int patientId, int laegemiddelId, double antal, DateTime startDato, DateTime slutDato)
     {
         Patient patient = db.Patienter.Where(x => x.PatientId == patientId).First();
@@ -153,6 +154,7 @@ public class DataService
     }
 
     // TODO: Implement!
+    // Opretter en daglig fast ordination
     public DagligFast OpretDagligFast(int patientId, int laegemiddelId,
         double antalMorgen, double antalMiddag, double antalAften, double antalNat,
         DateTime startDato, DateTime slutDato)
@@ -170,6 +172,7 @@ public class DataService
     }
 
     // TODO: Implement!
+    // Opretter daglig skæv ordination
     public DagligSkæv OpretDagligSkaev(int patientId, int laegemiddelId, Dosis[] doser, DateTime startDato, DateTime slutDato)
     {
         Patient patient = db.Patienter.Where(x => x.PatientId == patientId).First();
@@ -186,6 +189,7 @@ public class DataService
     }
 
     // TODO: Implement!
+    // Her kan anvendes en tidligere ordination
     public string AnvendOrdination(int id, Dato dato)
     {
         PN ordination = db.PNs.Find(id);
@@ -217,6 +221,7 @@ public class DataService
     /// <returns></returns>
 
     // TODO: Implement!
+    // Viser den anbefalede døgndosis afhængig af patientens vægt og lægemiddel
     public double GetAnbefaletDosisPerDøgn(int patientId, int laegemiddelId)
     {
         Patient p = db.Patienter.Find(patientId);

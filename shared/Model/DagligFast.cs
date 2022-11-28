@@ -25,6 +25,7 @@ public class DagligFast : Ordination {
 	}
 
     // TODO: Implement!
+	// Summere den samlede døgndosis
     public override double doegnDosis()
 	{
 		double samletDoegnDosisFast = MorgenDosis.antal + MiddagDosis.antal + AftenDosis.antal + NatDosis.antal;

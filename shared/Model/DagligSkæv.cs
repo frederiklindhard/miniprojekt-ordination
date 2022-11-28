@@ -25,6 +25,7 @@ public class DagligSkæv : Ordination {
 	}
 
     // TODO: Implement!
+    // Viser den gennemsnitlige døgndosis for en periode
     public override double doegnDosis()
     {
         double antalDage = base.antalDage();

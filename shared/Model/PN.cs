@@ -29,6 +29,7 @@ public class PN : Ordination {
     }
 
     // TODO: Implement!
+    // Viser den gennemsnitlige døngdosis
     public override double doegnDosis()
     {
         return Math.Round(samletDosis() / base.antalDage());
