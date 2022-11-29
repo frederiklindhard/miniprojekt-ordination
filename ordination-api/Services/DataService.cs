@@ -161,14 +161,24 @@ public class DataService
     {
         Patient patient = db.Patienter.Where(x => x.PatientId == patientId).First();
         Laegemiddel laegemiddel = db.Laegemiddler.Where(x => x.LaegemiddelId == laegemiddelId).First();
-        DagligFast nyDagligFast = new DagligFast(startDato.Date, slutDato.Date, laegemiddel, antalMorgen, antalMiddag, antalAften, antalNat);
 
-        db.Ordinationer.Add(nyDagligFast);
-        patient.ordinationer.Add(nyDagligFast);
+        try
+        {
+            DagligFast nyDagligFast = new DagligFast(startDato.Date, slutDato.Date, laegemiddel, antalMorgen, antalMiddag, antalAften, antalNat);
 
-        db.SaveChanges();
+            db.Ordinationer.Add(nyDagligFast);
+            patient.ordinationer.Add(nyDagligFast);
 
-        return nyDagligFast;
+            db.SaveChanges();
+
+            return nyDagligFast;
+        } catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+
+        return null!;
     }
 
     // TODO: Implement!
