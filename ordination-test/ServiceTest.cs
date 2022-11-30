@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 using Service;
 using Data;
+using shared.Model;
 
 [TestClass]
 public class ServiceTest
@@ -22,6 +23,7 @@ public class ServiceTest
     [TestMethod]
     public void PatientsExist()
     {
+        Patient patient = new Patient("123456-1234", "Lone Pedersen", 84);
         Assert.IsNotNull(service.GetPatienter());
     }
 }

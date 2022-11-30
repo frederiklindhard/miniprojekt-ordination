@@ -16,6 +16,8 @@ public class Laegemiddel
         this.enhedPrKgPrDoegnNormal = enhedPrKgPrDoegnNormal;
         this.enhedPrKgPrDoegnTung = enhedPrKgPrDoegnTung;
         this.enhed = enhed;
+
+
     }
 
     public Laegemiddel()

@@ -14,6 +14,11 @@ public class Patient
         this.cprnr = cprnr;
         this.navn = navn;
         this.vaegt = vaegt;
+
+        if (vaegt < 0 || vaegt > 1000)
+        {
+            throw new Exception("Fejlværdi");
+        }
     }
 
     public Patient()
