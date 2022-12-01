@@ -9,11 +9,9 @@ using shared.Model;
 [TestClass]
 public class OpretPNTest
 {
-    private DataService? service;
+    private readonly DataService service;
 
-
-    [TestInitialize]
-    public void SetupBeforeEachTest()
+    public OpretPNTest()
     {
         var optionsBuilder = new DbContextOptionsBuilder<OrdinationContext>();
         optionsBuilder.UseInMemoryDatabase(databaseName: "test-database");
@@ -28,8 +26,8 @@ public class OpretPNTest
         Patient p = service.GetPatienter().First();
         Laegemiddel lm = service.GetLaegemidler().First();
 
-        service.OpretPN(p.PatientId, lm.LaegemiddelId, 1, DateTime.Now, DateTime.Now.AddDays(1));
-        Assert.AreEqual(1, service.GetPNs().Count());
+        service.OpretPN(p.PatientId, lm.LaegemiddelId, 5, DateTime.Now, DateTime.Now.AddDays(10));
+        Assert.AreEqual(5, service.GetPNs().Count());
     }
 
 }

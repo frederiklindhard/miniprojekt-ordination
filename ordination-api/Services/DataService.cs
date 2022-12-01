@@ -39,7 +39,6 @@ public class DataService
             db.Patienter.Add(patients[2]);
             db.Patienter.Add(patients[3]);
             db.Patienter.Add(patients[4]);
-            db.Patienter.Add(patients[5]);
             db.SaveChanges();
         }
 
