@@ -26,7 +26,7 @@ public class OpretPNTest
         Patient p = service.GetPatienter().First();
         Laegemiddel lm = service.GetLaegemidler().First();
 
-        service.OpretPN(p.PatientId, lm.LaegemiddelId, 5, DateTime.Now, DateTime.Now.AddDays(10));
+        service.OpretPN(p.PatientId, lm.LaegemiddelId, 30, DateTime.Now, DateTime.Now.AddDays(1));
         Assert.AreEqual(5, service.GetPNs().Count());
     }
 

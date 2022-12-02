@@ -19,7 +19,10 @@ public class DataServiceTest
         service = new DataService(context);
         service.SeedData();
     }
+    //Den kan ikke genkende GetAnbefaletDosisPerDøgn, og derfor virker testen ikke
     /*
+    
+    
     [TestMethod]
     public void GetAnbefaletdosisPerDøgnTC2(int patientId, int laegemiddelId)
     {
@@ -27,7 +30,8 @@ public class DataServiceTest
         DataService dataService= service.GetAnbefaletDosisPerDøgn = new DataService(service.GetAnbefaletDosisPerDøgn(0, 1));
        
         Assert.AreEqual(95.1, service.GetAnbefaletDosisPerDøgn());
-    }*/
+    }
+    */
 }
     
 
